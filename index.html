@@ -9,6 +9,7 @@
     <script src="https://kit.fontawesome.com/d633f21f4a.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@mdi/font@7.2.96/css/materialdesignicons.min.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="./css/output.css">
     <link rel="stylesheet" href="./css/input.css">
     <link rel="stylesheet" href="./css/main.css">
@@ -117,7 +118,7 @@
                     <!-- products table-->
                     <div class="mx-auto mt-4">
                         <!-- Start coding here -->
-                        <div class="bg-white px-2 lg:px-0 relative shadow-md rounded-lg overflow-hidden">
+                        <div class="bg-white px-2 py-4 lg:px-0 relative shadow-md rounded-lg overflow-hidden">
                             <div
                                 class="flex flex-col md:flex-row items-center justify-between space-y-3 md:space-y-0 md:space-x-4 p-4">
                                 <div class="w-full grid grid-cols-1 md:grid-cols-4 gap-y-2 md:gap-2">
@@ -144,7 +145,7 @@
                                 </div>
                             </div>
                             <div class="overflow-x-auto">
-                                <table class="w-full text-sm text-left text-gray-500 ">
+                                <table class="w-full text-sm text-left text-gray-500" id="productsTable">
                                     <thead class="text-xs text-gray-700 uppercase bg-gray-50  ">
                                         <tr>
                                             <th class="px-4 py-3">num</th>
@@ -173,7 +174,7 @@
                                                 27</td>
                                             </th>
                                             <td class="px-4 py-3 w-24">PC</td>
-                                            <td class="px-4 py-3 available w-24">
+                                            <td class="px-4 py-3 available whitespace-nowrap">
                                                 <span>available</span>
                                             </td>
                                             <td class="px-4 py-3 w-24">300</td>
@@ -183,8 +184,9 @@
                                             <td class="px-4 py-3 w-24"><a class=" text-orange-400" href="#">300$</a>
                                             </td>
                                             <td class="px-4 py-3 w-24">
-                                                <button type="button" class="blue-btn" data-modal-target="Update-product-modal"
-                                                data-modal-toggle="Update-product-modal">
+                                                <button type="button" class="blue-btn"
+                                                    data-modal-target="Update-product-modal"
+                                                    data-modal-toggle="Update-product-modal">
                                                     Update
                                                 </button>
                                             </td>
@@ -195,60 +197,44 @@
                                                 </button>
                                             </td>
                                         </tr>
+                                        <tr class="border-b ">
+                                            <td class="px-4 py-3 w-12 border-r">1</td>
+                                            <th scope="row"
+                                                class="w-16 px-4 py-3 font-medium text-gray-900 whitespace-nowrap">
+                                                <img src="https://flowbite.com/docs/images/blog/image-4.jpg" alt="img"
+                                                    class=" w-16 rounded-none h-auto">
+                                            <td scope="row"
+                                                class="px-4 py-3 font-medium text-gray-900 whitespace-nowrap">Apple iMac
+                                                17</td>
+                                            </th>
+                                            <td class="px-4 py-3 w-24">Laptop</td>
+                                            <td class="px-4 py-3 out-of-Stock whitespace-nowrap">
+                                                <span>out-of-Stock</span>
+                                            </td>
+                                            <td class="px-4 py-3 w-24">300</td>
+                                            <td class="px-4 py-3 w-24">$2999</td>
+                                            <td class="px-4 py-3 w-24">15</td>
+                                            <td class="px-4 py-3 w-24">4.9</td>
+                                            <td class="px-4 py-3 w-24"><a class=" text-orange-400" href="#">440$</a>
+                                            </td>
+                                            <td class="px-4 py-3 w-24">
+                                                <button type="button" class="blue-btn"
+                                                    data-modal-target="Update-product-modal"
+                                                    data-modal-toggle="Update-product-modal">
+                                                    Update
+                                                </button>
+                                            </td>
+                                            <td class="px-4 py-3 w-24">
+                                                <button type="button" class="red-btn" data-modal-target="delete-modal"
+                                                    data-modal-toggle="delete-modal">
+                                                    Delete
+                                                </button>
+                                            </td>
+                                        </tr>
+                                        
                                     </tbody>
                                 </table>
                             </div>
-                            <nav class="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0 p-4"
-                                aria-label="Table navigation">
-                                <span class="text-sm font-normal text-gray-500 ">
-                                    Showing
-                                    <span class="font-semibold text-gray-900 ">1-10</span>
-                                    of
-                                    <span class="font-semibold text-gray-900 ">1000</span>
-                                </span>
-                                <ul class="inline-flex items-stretch -mx-4 sm:mx-0">
-                                    <li>
-                                        <a href="#"
-                                            class="flex items-center justify-center h-full py-1.5 px-3 ml-0 text-gray-500 bg-white rounded-l-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
-                                            <span class="sr-only">Previous</span>
-                                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight border border-gray-300 active-page">1</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">2</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">...</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="flex items-center justify-center text-sm py-2 px-3 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700">100</a>
-                                    </li>
-                                    <li>
-                                        <a href="#"
-                                            class="flex items-center justify-center h-full py-1.5 px-3 leading-tight text-gray-500 bg-white rounded-r-lg border border-gray-300 hover:bg-gray-100 hover:text-gray-700">
-                                            <span class="sr-only">Next</span>
-                                            <svg class="w-5 h-5" aria-hidden="true" fill="currentColor"
-                                                viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                                <path fill-rule="evenodd"
-                                                    d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z"
-                                                    clip-rule="evenodd"></path>
-                                            </svg>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </nav>
                         </div>
                     </div>
                 </section>
@@ -438,6 +424,7 @@
             </div>
         </div>
     </div>
+
     <!-- delete modal -->
     <div id="delete-modal" tabindex="-1"
         class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
@@ -476,9 +463,23 @@
 
 
 
-
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
     <script src="./js/mian.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.5/flowbite.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $('#productsTable').DataTable({
+                "search": {
+                    "search": $("#products-search").val()
+                }
+            });
+
+            $("#products-search").on("keyup", function () {
+                $('#productsTable').DataTable().search($(this).val()).draw();
+            });
+        });
+    </script>
 </body>
 
 </html>
