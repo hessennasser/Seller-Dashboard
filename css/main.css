@@ -122,14 +122,13 @@ body {
     }
 }
 
-
 /* Start Table */
 .responsive-table {
     overflow-x: auto;
 }
 
 table {
-    min-width: 1000px;
+    /* min-width: 1000px; */
     border-spacing: 0;
 }
 
@@ -146,7 +145,6 @@ tbody td {
     border-bottom: 1px solid #eee;
     border-left: 1px solid #eee;
     transition: 0.3s;
-    width: 200px;
     height: 100px;
 }
 
@@ -156,18 +154,6 @@ table tbody tr td:last-child {
 
 tbody tr:hover td:not(.count, .category) {
     background-color: #faf7f7;
-}
-
-table img {
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    padding: 2px;
-    background-color: white;
-}
-
-table img:not(:first-child) {
-    margin-left: -20px;
 }
 
 table .label {
