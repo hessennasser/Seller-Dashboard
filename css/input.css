@@ -1,0 +1,21 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+    .links {
+        @apply indent-5	leading-10	;
+    }
+    .links a {
+        @apply block text-gray-300 no-underline hover:text-white hover:bg-slate-700	;
+    }
+    section {
+        @apply py-14
+    }
+    .main-title {
+        @apply text-2xl border-l-4 px-3 border-blue-400 mb-5;
+    }
+    .overview .card {
+        @apply w-full bg-gray-600 text-white p-4 rounded-lg lg:h-52 lg:justify-center flex flex-col gap-5 shadow-xl duration-300 hover:-translate-y-3 hover:shadow-2xl;
+    }
+}
