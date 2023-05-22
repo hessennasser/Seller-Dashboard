@@ -195,7 +195,7 @@
     <!-- Modals -->
     <!-- add modal -->
     <div id="add-product-modal" tabindex="-1" aria-hidden="true"
-        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        class="fixed top-0 left-0 right-0 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full z-[10000000]">
         <div class="relative w-full max-w-md max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
@@ -214,17 +214,18 @@
                     <h3 class="mb-4 text-xl text-center font-medium text-gray-900">Add New Product</h3>
                     <form id="addForm" class="space-y-6">
                         <div
-                            class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                            class="mt-2 flex flex-col items-center justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
+                            <div class="grid grid-cols-2 gap-2" id="imagePreviewContainer">
+                            </div>
                             <div class="mt-4 text-center flex text-sm leading-6 text-gray-600 justify-center">
                                 <label for="imgUpdate"
                                     class="relative cursor-pointer rounded-md bg-white font-semibold text-indigo-600 focus-within:outline-none focus-within:ring-2 focus-within:ring-indigo-600 focus-within:ring-offset-2 hover:text-indigo-500 block">
-                                    <span>Upload a files</span>
+                                    <span>Upload files</span>
                                     <input id="imgUpdate" name="imgUpdate" type="file" accept="image/*" multiple
-                                        required="" class="sr-only">
+                                        required="" class="sr-only" onchange="handleImageUpload(event)">
                                 </label>
-                                <p class="ml-2">Project image</p>
-                                <p class="ml-2 projectImgName"></p>
                             </div>
+
                         </div>
                         <div>
                             <label for="productTitle" class="block mb-2 text-sm font-medium text-gray-900">Product
@@ -276,7 +277,7 @@
 
     <!-- update modal -->
     <div id="Update-product-modal" tabindex="-1" aria-hidden="true"
-        class="fixed top-0 left-0 right-0 z-50 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        class="fixed top-0 left-0 right-0 hidden w-full p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full z-[10000000]">
         <div class="relative w-full max-w-md max-h-full">
             <!-- Modal content -->
             <div class="relative bg-white rounded-lg shadow">
@@ -302,8 +303,10 @@
                                 placeholder="Gloves" required>
                         </div>
                         <div>
-                            <label for="updateCategory" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
-                            <select type="updateCategory" name="updateCategory" id="updateCategory" placeholder="Gloves Image"
+                            <label for="updateCategory"
+                                class="block mb-2 text-sm font-medium text-gray-900">Category</label>
+                            <select type="updateCategory" name="updateCategory" id="updateCategory"
+                                placeholder="Gloves Image"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                                 <option value="cat-1">cat-1</option>
@@ -321,7 +324,8 @@
                             </textarea>
                         </div>
                         <div>
-                            <label for="updateProductionDate" class="block mb-2 text-sm font-medium text-gray-900">Production
+                            <label for="updateProductionDate"
+                                class="block mb-2 text-sm font-medium text-gray-900">Production
                                 Date</label>
                             <input type="date" name="updateProductionDate" id="updateProductionDate"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -345,7 +349,7 @@
 
     <!-- delete modal -->
     <div id="Delete-modal" tabindex="-1"
-        class="fixed top-0 left-0 right-0 z-50 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full">
+        class="fixed top-0 left-0 right-0 hidden p-4 overflow-x-hidden overflow-y-auto md:inset-0 h-[calc(100%-1rem)] max-h-full z-[10000000000]">
         <div class="relative w-full max-w-md max-h-full">
             <div class="relative bg-white rounded-lg shadow">
                 <button type="button"

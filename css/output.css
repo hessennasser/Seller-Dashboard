@@ -833,6 +833,14 @@ section {
   z-index: 50;
 }
 
+.z-\[10000000\] {
+  z-index: 10000000;
+}
+
+.z-\[10000000000\] {
+  z-index: 10000000000;
+}
+
 .col-span-3 {
   grid-column: span 3 / span 3;
 }
