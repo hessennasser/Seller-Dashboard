@@ -139,6 +139,7 @@
                                             <th scope="col" class="px-4 py-3">Product name</th>
                                             <th scope="col" class="px-4 py-3">Category</th>
                                             <th scope="col" class="px-4 py-3">State</th>
+                                            <th scope="col" class="px-4 py-3">ٍStock</th>
                                             <th scope="col" class="px-4 py-3">sell</th>
                                             <th scope="col" class="px-4 py-3">Price</th>
                                             <th scope="col" class="px-4 py-3">All orders</th>
@@ -162,6 +163,7 @@
                                             <td class="px-4 py-3 available whitespace-nowrap">
                                                 <span>available</span>
                                             </td>
+                                            <td class="px-4 py-3 w-24 text-center">5</td>
                                             <td class="px-4 py-3 w-24">300</td>
                                             <td class="px-4 py-3 w-24">$2999</td>
                                             <td class="px-4 py-3 w-24">15</td>
@@ -180,8 +182,6 @@
                                                 </button>
                                             </td>
                                         </tr>
-
-
                                     </tbody>
                                 </table>
                             </div>
@@ -234,6 +234,31 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Gloves" required>
                         </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div>
+                                <label for="productStock" class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    Stock</label>
+                                <input type="number" name="productStock" id="productStock" min="0"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    value="1" required>
+                            </div>
+                            <div class="col-span-2">
+                                <label for="productState" class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    State</label>
+                                <div class="flex justify-center">
+                                    <label class="inline-flex items-center mr-4 mt-2">
+                                        <input type="radio" name="productState" value="available"
+                                            class="form-radio text-blue-500" checked>
+                                        <span class="ml-2 text-gray-900">Available</span>
+                                    </label>
+                                    <label class="inline-flex items-center mt-2">
+                                        <input type="radio" name="productState" value="out-of-stock"
+                                            class="form-radio text-red-500">
+                                        <span class="ml-2 text-gray-900">Out-of-Stock</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
                             <select type="category" name="category" id="category" placeholder="Gloves Image"
@@ -250,8 +275,7 @@
                                 class="block mb-2 text-sm font-medium text-gray-900">description</label>
                             <textarea name="description" id="description" cols="30" rows="10"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 resize-x-none min-h-[150px]"
-                                required />
-                            </textarea>
+                                required /></textarea>
                         </div>
                         <div>
                             <label for="productionDate" class="block mb-2 text-sm font-medium text-gray-900">Production
@@ -302,6 +326,32 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Gloves" required>
                         </div>
+                        <div class="grid grid-cols-3 gap-2">
+                            <div>
+                                <label for="productStock" class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    Stock</label>
+                                <input type="number" name="productStock" id="productStock" min="0"
+                                    class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                    value="1" required>
+                            </div>
+                            <div class="col-span-2">
+                                <label for="updateProductState"
+                                    class="block mb-2 text-sm font-medium text-gray-900">Product
+                                    State</label>
+                                <div class="flex justify-center">
+                                    <label class="inline-flex items-center mr-4 mt-2">
+                                        <input type="radio" name="updateProductState" value="available"
+                                            class="form-radio text-blue-500" checked>
+                                        <span class="ml-2 text-gray-900">Available</span>
+                                    </label>
+                                    <label class="inline-flex items-center mt-2">
+                                        <input type="radio" name="updateProductState" value="out-of-stock"
+                                            class="form-radio text-red-500">
+                                        <span class="ml-2 text-gray-900">Out-of-Stock</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
                         <div>
                             <label for="updateCategory"
                                 class="block mb-2 text-sm font-medium text-gray-900">Category</label>
@@ -320,8 +370,7 @@
                                 class="block mb-2 text-sm font-medium text-gray-900">description</label>
                             <textarea name="updateDescription" id="updateDescription" cols="30" rows="10"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 resize-x-none min-h-[150px]"
-                                required />
-                            </textarea>
+                                required /></textarea>
                         </div>
                         <div>
                             <label for="updateProductionDate"

@@ -77,3 +77,38 @@ document.querySelector("#updateForm").addEventListener("submit", (e) => e.preven
 //         reader.readAsDataURL(file);
 //     }
 // }
+
+// check product stock number 
+// Add new product
+const productStockInput = document.getElementById("productStock");
+const availableRadio = document.querySelector('input[value="available"]');
+const outOfStockRadio = document.querySelector('input[value="out-of-stock"]');
+
+productStockInput.addEventListener("input", (event) => {
+    if (event.target.value == 0) {
+        outOfStockRadio.checked = true;
+    } else {
+        availableRadio.checked = true;
+    }
+});
+
+outOfStockRadio.addEventListener("input", () => {
+    productStockInput.value = 0;
+});
+
+// Update product
+const updateProductStockInput = document.querySelector("#Update-product-modal #productStock");
+const updateAvailableRadio = document.querySelector('#Update-product-modal input[value="available"]');
+const updateOutOfStockRadio = document.querySelector('#Update-product-modal input[value="out-of-stock"]');
+
+updateProductStockInput.addEventListener("input", (event) => {
+    if (event.target.value == 0) {
+        updateOutOfStockRadio.checked = true;
+    } else {
+        updateAvailableRadio.checked = true;
+    }
+});
+
+updateOutOfStockRadio.addEventListener("input", () => {
+    updateProductStockInput.value = 0;
+});
