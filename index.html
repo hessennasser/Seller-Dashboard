@@ -212,7 +212,7 @@
                 </button>
                 <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl text-center font-medium text-gray-900">Add New Product</h3>
-                    <form class="space-y-6" action="#">
+                    <form id="addForm" class="space-y-6">
                         <div
                             class="mt-2 flex justify-center rounded-lg border border-dashed border-gray-900/25 px-6 py-10">
                             <div class="mt-4 text-center flex text-sm leading-6 text-gray-600 justify-center">
@@ -234,13 +234,6 @@
                                 placeholder="Gloves" required>
                         </div>
                         <div>
-                            <label for="altText" class="block mb-2 text-sm font-medium text-gray-900">Alt Text
-                                (SEO)</label>
-                            <input type="altText" name="altText" id="altText" placeholder="Gloves Image"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                required>
-                        </div>
-                        <div>
                             <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
                             <select type="category" name="category" id="category" placeholder="Gloves Image"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
@@ -258,6 +251,20 @@
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 resize-x-none min-h-[150px]"
                                 required />
                             </textarea>
+                        </div>
+                        <div>
+                            <label for="productionDate" class="block mb-2 text-sm font-medium text-gray-900">Production
+                                Date</label>
+                            <input type="date" name="productionDate" id="productionDate"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                required>
+                        </div>
+                        <div>
+                            <label for="expiryDate" class="block mb-2 text-sm font-medium text-gray-900">Expiry
+                                Date</label>
+                            <input type="date" name="expiryDate" id="expiryDate"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                required>
                         </div>
 
                         <button type="submit" class="w-full blue-btn">Add New Product</button>
@@ -286,24 +293,17 @@
                 </button>
                 <div class="px-6 py-6 lg:px-8">
                     <h3 class="mb-4 text-xl text-center font-medium text-gray-900">Update Product</h3>
-                    <form class="space-y-6" action="#">
+                    <form id="updateForm" class="space-y-6" action="#">
                         <div>
-                            <label for="productTitle" class="block mb-2 text-sm font-medium text-gray-900">Product
+                            <label for="updateProductTitle" class="block mb-2 text-sm font-medium text-gray-900">Product
                                 Title</label>
-                            <input type="text" name="productTitle" id="productTitle"
+                            <input type="text" name="updateProductTitle" id="updateProductTitle"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 placeholder="Gloves" required>
                         </div>
                         <div>
-                            <label for="altText" class="block mb-2 text-sm font-medium text-gray-900">Alt Text
-                                (SEO)</label>
-                            <input type="altText" name="altText" id="altText" placeholder="Gloves Image"
-                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
-                                required>
-                        </div>
-                        <div>
-                            <label for="category" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
-                            <select type="category" name="category" id="category" placeholder="Gloves Image"
+                            <label for="updateCategory" class="block mb-2 text-sm font-medium text-gray-900">Category</label>
+                            <select type="updateCategory" name="updateCategory" id="updateCategory" placeholder="Gloves Image"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
                                 required>
                                 <option value="cat-1">cat-1</option>
@@ -313,13 +313,28 @@
                             </select>
                         </div>
                         <div>
-                            <label for="description"
+                            <label for="updateDescription"
                                 class="block mb-2 text-sm font-medium text-gray-900">description</label>
-                            <textarea name="description" id="description" cols="30" rows="10"
+                            <textarea name="updateDescription" id="updateDescription" cols="30" rows="10"
                                 class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 resize-x-none min-h-[150px]"
                                 required />
                             </textarea>
                         </div>
+                        <div>
+                            <label for="updateProductionDate" class="block mb-2 text-sm font-medium text-gray-900">Production
+                                Date</label>
+                            <input type="date" name="updateProductionDate" id="updateProductionDate"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                required>
+                        </div>
+                        <div>
+                            <label for="updateExpiryDate" class="block mb-2 text-sm font-medium text-gray-900">Expiry
+                                Date</label>
+                            <input type="date" name="updateExpiryDate" id="updateExpiryDate"
+                                class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5"
+                                required>
+                        </div>
+
 
                         <button type="submit" class="w-full blue-btn">Update Product</button>
                     </form>
